@@ -29,10 +29,10 @@ export const SplashScreen = observer(function SplashScreen() {
       userOrError,
       match(
         () => {
-          // navigation.dispatch(StackActions.replace("signIn"))
+          navigation.dispatch(StackActions.replace("authStack"))
         },
         () => {
-          // navigation.dispatch(StackActions.replace("deviceTab"))
+          navigation.dispatch(StackActions.replace("deviceStack"))
         },
       ),
     )

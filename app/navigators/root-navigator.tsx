@@ -9,6 +9,7 @@ import { NavigationContainer, NavigationContainerRef } from "@react-navigation/n
 import { createStackNavigator } from "@react-navigation/stack"
 import { MainNavigator } from "./main-navigator"
 import { color } from "../theme"
+import { AuthNavigator } from "./auth/auth-navigator"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -22,6 +23,7 @@ import { color } from "../theme"
  */
 export type RootParamList = {
   mainStack: undefined
+  authStack: undefined
 }
 
 const Stack = createStackNavigator<RootParamList>()
@@ -37,6 +39,13 @@ const RootStack = () => {
       <Stack.Screen
         name="mainStack"
         component={MainNavigator}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="authStack"
+        component={AuthNavigator}
         options={{
           headerShown: false,
         }}

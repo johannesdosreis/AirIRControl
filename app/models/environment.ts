@@ -1,4 +1,8 @@
+import { Storage } from "./../services/firebase/storage"
+import { Firestore } from "./../services/firebase/firestore"
+import { Analytics } from "./../services/firebase/analytics"
 import { Api } from "../services/api"
+import { Auth } from "../services/firebase"
 
 let ReactotronDev
 if (__DEV__) {
@@ -18,6 +22,10 @@ export class Environment {
       this.reactotron = new ReactotronDev()
     }
     this.api = new Api()
+    this.auth = new Auth()
+    this.analytics = new Analytics()
+    this.firestore = new Firestore()
+    this.storage = new Storage()
   }
 
   async setup() {
@@ -37,4 +45,8 @@ export class Environment {
    * Our api.
    */
   api: Api
+  auth: Auth
+  analytics: Analytics
+  firestore: Firestore
+  storage: Storage
 }

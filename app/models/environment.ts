@@ -1,3 +1,4 @@
+import { Socket } from "./../services/socket/socket"
 import { Storage } from "./../services/firebase/storage"
 import { Firestore } from "./../services/firebase/firestore"
 import { Analytics } from "./../services/firebase/analytics"
@@ -26,6 +27,7 @@ export class Environment {
     this.analytics = new Analytics()
     this.firestore = new Firestore()
     this.storage = new Storage()
+    this.socket = new Socket()
   }
 
   async setup() {
@@ -49,4 +51,5 @@ export class Environment {
   analytics: Analytics
   firestore: Firestore
   storage: Storage
+  socket: Socket
 }

@@ -10,6 +10,7 @@ import { createStackNavigator } from "@react-navigation/stack"
 import { MainNavigator } from "./main-navigator"
 import { color } from "../theme"
 import { AuthNavigator } from "./auth/auth-navigator"
+import { DeviceNavigator } from "./device/device-navigator"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -24,6 +25,7 @@ import { AuthNavigator } from "./auth/auth-navigator"
 export type RootParamList = {
   mainStack: undefined
   authStack: undefined
+  deviceStack: undefined
 }
 
 const Stack = createStackNavigator<RootParamList>()
@@ -46,6 +48,13 @@ const RootStack = () => {
       <Stack.Screen
         name="authStack"
         component={AuthNavigator}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="deviceStack"
+        component={DeviceNavigator}
         options={{
           headerShown: false,
         }}

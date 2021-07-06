@@ -83,3 +83,4 @@ app/config/env.*.js
 !env.js
 
 google-services.json
+*.hprof

@@ -86,7 +86,7 @@ export const SignInScreen = observer(function SignInScreen() {
         },
         () => {
           console.log("Fez login")
-          navigation.dispatch(StackActions.replace("deviceTab"))
+          navigation.dispatch(StackActions.replace("deviceStack"))
         },
       ),
     )
